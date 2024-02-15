@@ -6,43 +6,10 @@ service: {
     netbios: 'IPA',
     password: 'Secret123'
   },
-  ldap: {
-    domain: 'ldap.test',
-    hostname: 'master',
-    fqn: 'master.ldap.test',
-    suffix: 'dc=ldap,dc=test',
-    bind: {
-      dn: 'cn=Directory Manager',
-      password: 'Secret123'
-    }
-  },
-  samba: {
-    netbios: SAMBA,
-    domain: samba.test,
-    password: Secret123
-  },
   client: {
-    domain: 'client.test',
-    fqn: 'client.test'
+    domain: 'client.ipa.test',
+    fqn: 'client.ipa.test'
   },
-  kdc: {
-    realm: TEST,
-    domain: test,
-    fqn: kdc.test,
-    master_password: Secret123
-  },
-  keycloak: {
-    domain: keycloak.test,
-    fqn: master.keycloak.test,
-    admin_password: Secret123
-  },
-  ad: {
-    domain: ad.test,
-    hostname: 'dc',
-    netbios: AD,
-    safe_password: Secret123,
-    suffix: 'dc=ad,dc=test'
-  }
 }
 
 user_regular_uid: 1000
@@ -58,20 +25,14 @@ user: {
 }
 
 freeipa_packages: {
-    server: [ freeipa-server, freeipa-server-dns, freeipa-server-trust-ad ],
+    server: [ freeipa-server, freeipa-server-dns ],
     client: [ freeipa-client, ]
 }
 
 ipa_packages: {
-    server: [ ipa-server-dns, ipa-server, ipa-server-trust-ad ],
+    server: [ ipa-server-dns, ipa-server ],
     client: [ ipa-client, ]
 }
 
-join_samba: yes
 join_ipa: yes
-join_ldap: yes
-join_ad: no
-trust_ipa_samba: yes
-trust_ipa_ad: no
-trust_ipa_ad_two_way: no
 extended_packageset: yes

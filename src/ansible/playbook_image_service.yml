@@ -6,42 +6,17 @@
   - firewall
   - no_nscd
 
-- hosts: master.ldap.test
-  gather_facts: no
-  roles:
-  - ldap
-
-- hosts: dc.samba.test
-  gather_facts: no
-  roles:
-  - samba
-
 - hosts: master.ipa.test
   gather_facts: no
   roles:
   - ipa
   - { role: passkey, when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian" }
 
-- hosts: client.test
+- hosts: client.ipa.test
   gather_facts: no
   roles:
   - client
   - { role: passkey, when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian" }
-
-- hosts: nfs.test
-  gather_facts: no
-  roles:
-  - nfs
-
-- hosts: kdc.test
-  gather_facts: no
-  roles:
-  - kdc
-
-- hosts: master.keycloak.test
-  gather_facts: no
-  roles:
-  - keycloak
 
 - hosts: services
   gather_facts: no

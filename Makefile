@@ -23,7 +23,6 @@ stop:
 
 down:
 	docker-compose -f docker-compose.yml \
-	-f docker-compose.keycloak.yml \
 	-f docker-compose.passkey.yml down
 
 update:

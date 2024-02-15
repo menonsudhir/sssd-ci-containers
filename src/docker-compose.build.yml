@@ -5,21 +5,6 @@ services:
   ipa:
     image: localhost/sssd/ci-base-ipa:${TAG}
     container_name: sssd-wip-ipa
-  ldap:
-    image: localhost/sssd/ci-base-ldap:${TAG}
-    container_name: sssd-wip-ldap
-  samba:
-    image: localhost/sssd/ci-base-samba:${TAG}
-    container_name: sssd-wip-samba
   client:
     image: localhost/sssd/ci-base-client:${TAG}
     container_name: sssd-wip-client
-  nfs:
-    image: localhost/sssd/ci-base-nfs:${TAG}
-    container_name: sssd-wip-nfs
-  kdc:
-    image: localhost/sssd/ci-base-kdc:${TAG}
-    container_name: sssd-wip-kdc
-  keycloak:
-    image: localhost/sssd/ci-base-keycloak:${TAG}
-    container_name: sssd-wip-keycloak

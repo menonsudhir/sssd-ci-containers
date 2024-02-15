@@ -197,6 +197,8 @@
       name:
       - ci-sssd-random
       - umockdev
+      - lsusb
+      - fido2-tools
     when: passkey_support
   when: "'base_client' in group_names or 'client' in group_names or 'base_ipa' in group_names or 'ipa' in group_names"
 
